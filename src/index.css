@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+    /* Premium HSL Palette */
+    --color-brand-primary: hsl(209 97% 26%);
+    --color-brand-secondary: hsl(347 77% 50%);
+    --color-brand-accent: hsl(45 92% 60%);
+    /* Gold/Amber */
+
+    --color-surface-base: hsl(210 20% 98%);
+    --color-surface-card: hsl(0 0% 100%);
+    --color-surface-overlay: hsla(210 20% 98% / 0.7);
+
+    /* Shadows */
+    --shadow-premium: 0 10px 30px -10px hsla(209 97% 20% / 0.1);
+    --shadow-glass: 0 8px 32px 0 hsla(209 97% 20% / 0.05);
+
+    /* Animations */
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+}
+
+@layer base {
+    body {
+        @apply font-sans antialiased text-slate-900 bg-surface-base;
+    }
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-glass;
+    }
+
+    .glass-dark {
+        @apply bg-slate-900/70 backdrop-blur-md border border-white/10 shadow-glass;
+    }
+}
